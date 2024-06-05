@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 import React from "react";
 
-export default function TabsLayout() {
+export default function Home() {
   return (
     <View>
-      <Text>TabsLayout</Text>
+      <Text>Home</Text>
     </View>
   );
 }
