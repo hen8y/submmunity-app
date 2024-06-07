@@ -7,6 +7,7 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
     const [fontsLoaded, error] = useFonts({
         Zeyada: require("@/assets/fonts/Zeyada-Regular.ttf"),
+        DMSans: require("@/assets/fonts/DMSans-Regular.ttf"),
     });
 
     useEffect(() => {

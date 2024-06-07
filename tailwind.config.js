@@ -8,7 +8,8 @@ module.exports = {
             },
 
             fontFamily: {
-                zeyada: 'Zeyada'
+                zeyada: 'Zeyada',
+                sans: 'DMSans'
             }
         },
     },

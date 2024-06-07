@@ -8,6 +8,7 @@ interface NormalInputProps {
     placeholder: string;
     customClasses: string;
     titleClasess: string;
+    hideLabel: boolean;
 }
 
 export default function NormalInput({
@@ -17,10 +18,13 @@ export default function NormalInput({
     handleChangeText,
     customClasses,
     titleClasess,
+    hideLabel = false,
 }: NormalInputProps) {
     return (
         <View className="w-full">
-            <Text className={`${titleClasess}`}>{title}</Text>
+            <Text className={`${titleClasess} ${hideLabel ? "hidden" : ""}`}>
+                {title}
+            </Text>
             <TextInput
                 onChangeText={handleChangeText}
                 placeholder={placeholder}

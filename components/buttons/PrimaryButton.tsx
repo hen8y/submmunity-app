@@ -1,17 +1,20 @@
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import React from "react";
+import ThemedText from "../ThemedText";
 
 interface LinkButtonProps {
-    content: string;
+    content: any;
     customClasses: string;
     isLoading: boolean;
     handlePress: () => void;
+    textClasses: string;
 }
 
 export default function PrimaryButton({
     content,
     customClasses,
     isLoading,
+    textClasses,
     handlePress,
 }: LinkButtonProps) {
     return (
@@ -19,9 +22,13 @@ export default function PrimaryButton({
             activeOpacity={0.7}
             disabled={isLoading}
             onPress={handlePress}
-            className={`min-h-[55px] bg-primary justify-center flex items-center rounded-full  ${customClasses}`}
+            className={`min-h-[60px] justify-center flex items-center rounded-full  ${customClasses}`}
         >
-            <Text className="text-lg font-bold text-white">{content}</Text>
+            <ThemedText
+                textClass={`text-lg font-bold text-white ${textClasses}`}
+            >
+                {content}
+            </ThemedText>
         </TouchableOpacity>
     );
 }

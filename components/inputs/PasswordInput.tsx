@@ -9,6 +9,7 @@ interface PasswordInputProps {
     customClasses: string;
     showPassword: true;
     titleClasess: string;
+    hideLabel: boolean;
 }
 
 export default function PasswordInput({
@@ -19,10 +20,13 @@ export default function PasswordInput({
     customClasses,
     showPassword,
     titleClasess,
+    hideLabel,
 }: PasswordInputProps) {
     return (
         <View className="w-full">
-            <Text className={`${titleClasess}`}>{title}</Text>
+            <Text className={`${titleClasess} ${hideLabel ? "hidden" : ""}`}>
+                {title}
+            </Text>
             <TextInput
                 onChangeText={handleChangeText}
                 placeholder={placeholder}
