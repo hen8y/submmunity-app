@@ -30,6 +30,7 @@ export default function NormalInput({
                 placeholder={placeholder}
                 value={value}
                 className={`w-full min-h-[55px] mt-1 px-4 rounded-md ${customClasses}`}
+                placeholderTextColor="#aaa"
             />
         </View>
     );

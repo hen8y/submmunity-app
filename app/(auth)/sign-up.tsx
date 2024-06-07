@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import {
     View,
-    Text,
     ScrollView,
     KeyboardAvoidingView,
     Platform,
@@ -14,8 +13,8 @@ import Logo from "@/components/Logo";
 import PasswordInput from "@/components/inputs/PasswordInput";
 import NormalInput from "@/components/inputs/NormalInput";
 import { useState } from "react";
-import { AntDesign } from "@expo/vector-icons";
 import ThemedText from "@/components/ThemedText";
+import { Iconify } from "react-native-iconify";
 
 export default function SignUp() {
     const [form, setForm] = useState({
@@ -37,7 +36,11 @@ export default function SignUp() {
                             onPress={() => router.back()}
                             className="mt-1 w-12 h-12 flex-row items-center justify-center rounded-full bg-zinc-100"
                         >
-                            <AntDesign name="left" size={16} color="black" />
+                            <Iconify
+                                icon="ic:round-chevron-left"
+                                size={24}
+                                color="#111"
+                            />
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => router.push("/sign-in")}
@@ -84,7 +87,7 @@ export default function SignUp() {
                                 }
                                 value={form.password}
                                 title="Password"
-                                showPassword={true}
+                                showPassword={false}
                             />
 
                             <PasswordInput
@@ -97,7 +100,7 @@ export default function SignUp() {
                                 }
                                 value={form.confirmPassword}
                                 title="Confirm Password"
-                                showPassword={true}
+                                showPassword={false}
                             />
 
                             <View className="w-full">

@@ -41,7 +41,7 @@ export default function Index() {
                         />
                     </View>
 
-                    <View className="mb-5 absolute bottom-0">
+                    <View className="mb-5 mt-20">
                         <View className="gap-2 mt-5 flex-row items-center justify-center">
                             <View className="h-[1px] flex-1 bg-zinc-300" />
                             <ThemedText>Or continue using</ThemedText>

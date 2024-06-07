@@ -7,7 +7,7 @@ interface PasswordInputProps {
     value: string;
     placeholder: string;
     customClasses: string;
-    showPassword: true;
+    showPassword: boolean;
     titleClasess: string;
     hideLabel: boolean;
 }
@@ -33,6 +33,7 @@ export default function PasswordInput({
                 value={value}
                 className={`w-full min-h-[55px] mt-1 px-4 rounded-md ${customClasses}`}
                 secureTextEntry={!showPassword}
+                placeholderTextColor="#aaa"
             />
         </View>
     );

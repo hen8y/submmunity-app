@@ -1,6 +1,6 @@
-const logo = require("../assets/images/app/logo.png");
-const google = require('../assets/images/logos/google.png')
-const apple = require('../assets/images/logos/apple.png')
+import logo from "../assets/images/app/logo.png";
+import google from '../assets/images/logos/google.png';
+import apple from '../assets/images/logos/apple.png';
 
 export default {
     logo, apple, google

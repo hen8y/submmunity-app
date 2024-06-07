@@ -2,13 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
-import { Link, router } from "expo-router";
+import { router } from "expo-router";
 import Logo from "@/components/Logo";
 import NormalInput from "@/components/inputs/NormalInput";
-import { images } from "@/constants";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import ThemedText from "@/components/ThemedText";
 import { useState } from "react";
+import { Iconify } from "react-native-iconify";
 export default function ForgotPassword() {
     const [email, setEmail] = useState("");
 
@@ -21,7 +20,11 @@ export default function ForgotPassword() {
                         onPress={() => router.back()}
                         className="mt-1 w-12 h-12 flex-row items-center justify-center rounded-full bg-zinc-100"
                     >
-                        <AntDesign name="left" size={16} color="black" />
+                        <Iconify
+                            icon="ic:round-chevron-left"
+                            size={24}
+                            color="#111"
+                        />
                     </TouchableOpacity>
                     <View className="items-center mt-20 flex-col w-full">
                         <Logo />
