@@ -9,7 +9,11 @@ module.exports = {
 
             fontFamily: {
                 zeyada: 'Zeyada',
-                sans: 'DMSans'
+                sans: 'DMSans',
+                poppin: 'poppin',
+                bPoppin: 'bPoppin',
+                sbPoppin: 'sbPoppin',
+                ebPoppin: 'ebPoppin',
             }
         },
     },

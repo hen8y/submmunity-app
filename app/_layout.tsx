@@ -8,15 +8,21 @@ export default function RootLayout() {
     const [fontsLoaded, error] = useFonts({
         Zeyada: require("@/assets/fonts/Zeyada-Regular.ttf"),
         DMSans: require("@/assets/fonts/DMSans-Regular.ttf"),
+        poppin: require("@/assets/fonts/Poppins-Regular.ttf"),
+        sbPoppin: require("@/assets/fonts/Poppins-Medium.ttf"),
+        bPoppin: require("@/assets/fonts/Poppins-Bold.ttf"),
+        ebPoppin: require("@/assets/fonts/Poppins-ExtraBold.ttf"),
     });
 
     useEffect(() => {
         if (error) throw error;
 
-        if (fontsLoaded) SplashScreen.hideAsync();
+        if (fontsLoaded) {
+            SplashScreen.hideAsync();
+        }
     }, [fontsLoaded, error]);
 
-    if (!fontsLoaded && error) return null;
+    if (!fontsLoaded || error) return null;
 
     return (
         <Stack>

@@ -7,7 +7,7 @@ import Logo from "@/components/Logo";
 import { images } from "@/constants";
 import ThemedText from "@/components/ThemedText";
 
-export default function App() {
+export default function Index() {
     return (
         <SafeAreaView className="h-full bg-white">
             <ScrollView contentContainerStyle={{ height: "100%" }}>

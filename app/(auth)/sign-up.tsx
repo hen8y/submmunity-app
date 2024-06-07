@@ -5,7 +5,6 @@ import {
     ScrollView,
     KeyboardAvoidingView,
     Platform,
-    Image,
     TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,7 +14,6 @@ import Logo from "@/components/Logo";
 import PasswordInput from "@/components/inputs/PasswordInput";
 import NormalInput from "@/components/inputs/NormalInput";
 import { useState } from "react";
-import { images } from "@/constants";
 import { AntDesign } from "@expo/vector-icons";
 import ThemedText from "@/components/ThemedText";
 
@@ -37,15 +35,21 @@ export default function SignUp() {
                     <View className="flex-row justify-between items-center w-10/12 mx-auto">
                         <TouchableOpacity
                             onPress={() => router.back()}
-                            className="mt-1 p-3 rounded-full bg-zinc-100"
+                            className="mt-1 w-12 h-12 flex-row items-center justify-center rounded-full bg-zinc-100"
                         >
                             <AntDesign name="left" size={16} color="black" />
                         </TouchableOpacity>
-                        <Link href="/sign-in" className="text-zinc-700 text-lg">
-                            <ThemedText textClass="font-semibold">
+                        <TouchableOpacity
+                            onPress={() => router.push("/sign-in")}
+                            className="font-semibold bg-zinc-100 p-2 rounded-lg text-zinc-600 text-lg"
+                        >
+                            <ThemedText
+                                type="semibold"
+                                textClass="font-semibold"
+                            >
                                 Sign In
                             </ThemedText>
-                        </Link>
+                        </TouchableOpacity>
                     </View>
                     <View className="flex-1  items-center mt-10 w-10/12 mx-auto">
                         <View className="items-center flex-col w-full">
@@ -97,11 +101,14 @@ export default function SignUp() {
                             />
 
                             <View className="w-full">
-                                <ThemedText textClass="mt-7 text-center">
+                                <ThemedText textClass="mt-7 text-center text-zinc-500">
                                     By registering you agree to our
                                 </ThemedText>
                                 <Link href="" className="mt-1 text-center">
-                                    <ThemedText textClass="font-bold">
+                                    <ThemedText
+                                        type="bold"
+                                        textClass="text-zinc-700"
+                                    >
                                         Terms and Condition
                                     </ThemedText>
                                 </Link>

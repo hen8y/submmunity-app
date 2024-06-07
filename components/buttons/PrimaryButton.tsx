@@ -25,7 +25,8 @@ export default function PrimaryButton({
             className={`min-h-[60px] justify-center flex items-center rounded-full  ${customClasses}`}
         >
             <ThemedText
-                textClass={`text-lg font-bold text-white ${textClasses}`}
+                type="semibold"
+                textClass={`text-lg font-bold text-white text-sm ${textClasses}`}
             >
                 {content}
             </ThemedText>

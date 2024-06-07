@@ -31,7 +31,7 @@ export default function PasswordInput({
                 onChangeText={handleChangeText}
                 placeholder={placeholder}
                 value={value}
-                className={`w-full min-h-[55px] mt-1 px-4 border rounded-md border-zinc-300 ${customClasses}`}
+                className={`w-full min-h-[55px] mt-1 px-4 rounded-md ${customClasses}`}
                 secureTextEntry={!showPassword}
             />
         </View>

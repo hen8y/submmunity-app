@@ -37,18 +37,18 @@ export default function SignIn() {
                 <View className="flex-row justify-between items-center w-10/12 mx-auto">
                     <TouchableOpacity
                         onPress={() => router.back()}
-                        className="mt-1 p-3 rounded-full bg-zinc-100"
+                        className="mt-1 w-12 h-12 flex-row items-center justify-center rounded-full bg-zinc-100"
                     >
                         <AntDesign name="left" size={16} color="black" />
                     </TouchableOpacity>
-                    <Link
-                        href="/sign-up"
-                        className="font-semibold text-zinc-700 text-lg"
+                    <TouchableOpacity
+                        onPress={() => router.push("/sign-up")}
+                        className="font-semibold bg-zinc-100 p-2 rounded-lg text-zinc-600 text-lg"
                     >
-                        <ThemedText textClass="font-semibold">
+                        <ThemedText type="semibold" textClass="font-semibold">
                             Sign Up
                         </ThemedText>
-                    </Link>
+                    </TouchableOpacity>
                 </View>
                 <View className="flex-1 mt-20 w-10/12 mx-auto h-full">
                     <View className="items-center flex-col w-full">
@@ -88,7 +88,7 @@ export default function SignIn() {
                         <View className="mt-5 w-full">
                             <Link
                                 className="text-primary text-right font-semibold"
-                                href="/sign-in"
+                                href="/forgot-password"
                             >
                                 <ThemedText>forgot password?</ThemedText>
                             </Link>
@@ -97,7 +97,7 @@ export default function SignIn() {
                             isLoading={false}
                             content="Sign In"
                             textClasses=""
-                            handlePress={() => router.push("/sign-in")}
+                            handlePress={() => router.push("/home")}
                             customClasses="w-full mt-7 bg-primary h-16"
                         />
                     </View>
