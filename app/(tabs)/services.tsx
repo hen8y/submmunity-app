@@ -2,8 +2,7 @@ import { SafeAreaView, FlatList, View, TextInput } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import ThemedText from "@/components/ThemedText";
-import { AntDesign } from "@expo/vector-icons";
-import SubscriptionList from "@/components/SubscriptionList";
+import SubscriptionList from "@/components/services/SubscriptionList";
 import { Iconify } from "react-native-iconify";
 
 export default function Services() {
@@ -59,15 +58,20 @@ export default function Services() {
     ];
 
     return (
-        <SafeAreaView>
+        <SafeAreaView className="h-full bg-zinc-50 w-full">
             <StatusBar style="auto" />
-            <View className="w-11/12 mx-auto mt-10">
-                <ThemedText type="bold" textClass="text-4xl">
-                    Available Services
-                </ThemedText>
+            <View className="w-full mt-10">
+                <View className=" p-4">
+                    <ThemedText type="bold" textClass="text-4xl">
+                        Available Services
+                    </ThemedText>
+                    <ThemedText textClass="mt-2 text-zinc-500">
+                        Lorem ipsum dolor sit, amet consectetur{" "}
+                    </ThemedText>
+                </View>
 
-                <View className="flex-row justify-between mt-10 items-center mb-10">
-                    <View className="flex-1 mr-3 w-full bg-neutral-200 flex-row items-center justify-around rounded-full p-4">
+                <View className="mb-1 p-4 pt-0">
+                    <View className="w-full bg-zinc-100 flex-row items-center justify-around rounded-full p-4">
                         <Iconify icon="oui:search" size={15} color="#111" />
                         <TextInput
                             className="flex-1 pl-3"
@@ -75,13 +79,12 @@ export default function Services() {
                             placeholderTextColor="#aaa"
                         />
                     </View>
-                    <View className="w-10 h-10 bg-black rounded-full"></View>
                 </View>
                 <FlatList
                     data={subscriptions}
                     renderItem={({ item }) => <SubscriptionList item={item} />}
                     keyExtractor={(item) => item.id}
-                    numColumns={2}
+                    contentContainerStyle={{ paddingBottom: 150, padding: 8 }}
                 />
             </View>
         </SafeAreaView>

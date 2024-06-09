@@ -54,7 +54,7 @@ export default function Animated3Dot({ onPress }: Animated3DotProps) {
                 }}
                 className="justify-center items-center"
             >
-                <Entypo name="dots-three-horizontal" size={16} color="black" />
+                <Entypo name="dots-three-horizontal" size={16} color="#555" />
             </Pressable>
             {showBubble && (
                 <Animated.View style={[styles.bubble, bubbleStyle]} />

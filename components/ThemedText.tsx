@@ -2,7 +2,7 @@ import { Text, type TextProps } from "react-native";
 import React from "react";
 
 export type ThemedTextProps = TextProps & {
-    type?: string;
+    type?: "bold" | "semibold" | "default" | "em";
     textClass?: string;
 };
 
