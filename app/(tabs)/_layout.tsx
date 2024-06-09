@@ -35,7 +35,7 @@ export default function TabsLayout() {
             }}
         >
             <Tabs.Screen
-                name="home"
+                name="(home)"
                 options={{
                     headerShown: false,
                     title: "Home",
@@ -57,7 +57,7 @@ export default function TabsLayout() {
             />
 
             <Tabs.Screen
-                name="services"
+                name="(services)"
                 options={{
                     headerShown: false,
                     title: "Services",
@@ -101,7 +101,7 @@ export default function TabsLayout() {
             />
 
             <Tabs.Screen
-                name="profile"
+                name="(profile)"
                 options={{
                     headerShown: false,
                     title: "Profile",
@@ -122,16 +122,5 @@ export default function TabsLayout() {
                 }}
             />
         </Tabs>
-        // <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
-        //     <Tabs.Screen
-        //         name="index"
-        //         options={{
-        //             title: "Home",
-        //             tabBarIcon: ({ color }) => (
-        //                 <FontAwesome size={28} name="home" color={color} />
-        //             ),
-        //         }}
-        //     />
-        // </Tabs>
     );
 }

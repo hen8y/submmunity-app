@@ -4,6 +4,7 @@ import ThemedText from "../ThemedText";
 import icons from "@/constants/icons";
 import { Iconify } from "react-native-iconify";
 import DownPopup from "../DownPopup";
+import { router } from "expo-router";
 
 export type SubscriptionListProps = {
     item: {
@@ -17,7 +18,11 @@ export type SubscriptionListProps = {
 export default function SubscriptionList({ item }: SubscriptionListProps) {
     const [showPopup, setShowPopup] = useState(false);
     return (
-        <>
+        <Pressable
+            onPress={() => {
+                router.push("/familylist");
+            }}
+        >
             <View className="m-2 rounded-xl bg-white flex-1 p-4">
                 <ThemedText type="semibold">Apple Music</ThemedText>
                 <View className="mt-8 flex-row justify-between">
@@ -54,6 +59,6 @@ export default function SubscriptionList({ item }: SubscriptionListProps) {
                 height={200}
                 setShowPopup={setShowPopup}
             />
-        </>
+        </Pressable>
     );
 }

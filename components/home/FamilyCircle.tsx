@@ -12,7 +12,7 @@ export default function FamilyCircle({ icon, name }: FamilyCircleProps) {
     return (
         <View className="p-2">
             <View className="flex-col items-center">
-                <View className="h-16 w-16 rounded-full bg-zinc-100 p-3 flex-row items-center justify-center">
+                <View className="h-16 w-16 rounded-full bg-zinc-200/70 p-3 flex-row items-center justify-center">
                     <Image
                         source={icon}
                         resizeMode="contain"
