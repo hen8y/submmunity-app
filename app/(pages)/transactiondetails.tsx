@@ -1,11 +1,12 @@
 import { SafeAreaView, ScrollView, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { StatusBar } from "expo-status-bar";
+import { router, useLocalSearchParams } from "expo-router";
 import ThemedText from "@/components/ThemedText";
 import { Iconify } from "react-native-iconify";
-import { router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
-export default function Earnings() {
+export default function TransactionDetails() {
+    const item = useLocalSearchParams();
     return (
         <SafeAreaView className="bg-white h-full">
             <ScrollView>
@@ -21,7 +22,9 @@ export default function Earnings() {
                             color="#111"
                         />
                     </TouchableOpacity>
-                    <ThemedText textClass="mx-2 text-base">Earnings</ThemedText>
+                    <ThemedText textClass="mx-2 text-base">
+                        Transaction {item.id}
+                    </ThemedText>
                 </View>
             </ScrollView>
         </SafeAreaView>

@@ -5,7 +5,7 @@ import ThemedText from "@/components/ThemedText";
 import { Iconify } from "react-native-iconify";
 import { router } from "expo-router";
 
-export default function SharedFamilies() {
+export default function SharedFamilyList() {
     return (
         <SafeAreaView className="bg-white h-full">
             <ScrollView>

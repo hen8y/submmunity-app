@@ -18,12 +18,13 @@ import Animated3Dot from "@/components/Animated3Dot";
 import FamilyCircle from "@/components/home/FamilyCircle";
 import { images } from "@/constants";
 import { router } from "expo-router";
+import RecentTransactions from "@/components/home/RecentTransactions";
 
 interface Family {
     name: string;
     icon: ImageSourcePropType; // Adjust the type if necessary
 }
-export default function Overview() {
+export default function Home() {
     const [showPopup, setShowPopup] = useState(false);
 
     const families = [
@@ -77,21 +78,18 @@ export default function Overview() {
                                 </ThemedText>
                             </View>
 
-                            <DropDown
-                                trigger={
-                                    <View className="bg-white/20 rounded-full p-2">
-                                        <Iconify
-                                            icon="hugeicons:notification-02"
-                                            size={18}
-                                            color="#fff"
-                                        />
-                                    </View>
-                                }
-                                content={
-                                    <ThemedText>No Notification</ThemedText>
-                                }
-                                contentClasses="w-40"
-                            />
+                            <Pressable
+                                onPress={() => {
+                                    router.push("/notification");
+                                }}
+                                className="bg-white/20 rounded-full p-2"
+                            >
+                                <Iconify
+                                    icon="hugeicons:notification-02"
+                                    size={18}
+                                    color="#fff"
+                                />
+                            </Pressable>
                         </View>
                         <ThemedText textClass="text-white/90 text-sm mt-7">
                             Your Balance
@@ -176,46 +174,7 @@ export default function Overview() {
                     </View>
                 </View>
 
-                <View className="p-2">
-                    <View className="w-full rounded-3xl bg-white  min-h-[50vh] p-4">
-                        <ThemedText
-                            type="semibold"
-                            textClass="text-zinc-700 text-base"
-                        >
-                            Transactions
-                        </ThemedText>
-
-                        <View className="flex-row items-center mt-3 justify-between">
-                            <View className="flex-row items-center">
-                                <View className="h-10 items-center justify-center w-10 rounded-full bg-purple-500">
-                                    <ThemedText textClass="text-2xl text-white">
-                                        A
-                                    </ThemedText>
-                                </View>
-                                <View className="mx-2">
-                                    <ThemedText type="semibold">
-                                        Spotify Subscription
-                                    </ThemedText>
-                                    <ThemedText textClass="text-zinc-700/80">
-                                        Ogbonna Henry
-                                    </ThemedText>
-                                </View>
-                            </View>
-
-                            <View>
-                                <ThemedText
-                                    type="semibold"
-                                    textClass="text-right"
-                                >
-                                    -₦700
-                                </ThemedText>
-                                <ThemedText textClass="text-zinc-700/80 text-right">
-                                    30 December
-                                </ThemedText>
-                            </View>
-                        </View>
-                    </View>
-                </View>
+                <RecentTransactions />
             </View>
 
             <DownPopup
