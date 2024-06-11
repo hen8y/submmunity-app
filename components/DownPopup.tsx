@@ -26,6 +26,7 @@ export default function DownPopup({
                     <View
                         className="absolute rounded-xl bottom-0 w-full bg-zinc-50"
                         style={[styles.modalView, { height: height }]}
+                        onStartShouldSetResponder={() => true}
                     >
                         <View className="h-1 mx-auto my-2 rounded-full w-8 bg-zinc-400"></View>
                         <View {...otherView} />

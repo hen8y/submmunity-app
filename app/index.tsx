@@ -35,7 +35,7 @@ export default function Index() {
                         <PrimaryButton
                             isLoading={false}
                             content="Create an account"
-                            handlePress={() => router.push("/overview")}
+                            handlePress={() => router.push("/home")}
                             textClasses="text-green-700"
                             customClasses="w-full mt-4 bg-primary/20"
                         />

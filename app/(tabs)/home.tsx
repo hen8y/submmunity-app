@@ -19,6 +19,7 @@ import FamilyCircle from "@/components/home/FamilyCircle";
 import { images } from "@/constants";
 import { router } from "expo-router";
 import RecentTransactions from "@/components/home/RecentTransactions";
+import FamilyPopup from "@/components/FamilyPopup";
 
 interface Family {
     name: string;
@@ -26,6 +27,7 @@ interface Family {
 }
 export default function Home() {
     const [showPopup, setShowPopup] = useState(false);
+    const [showFamilyPopup, setShowFamilyPopup] = useState(false);
 
     const families = [
         {
@@ -51,7 +53,15 @@ export default function Home() {
     ];
 
     const renderItem = ({ item }: { item: Family }) => {
-        return <FamilyCircle icon={item.icon} name={item.name} />;
+        return (
+            <FamilyCircle
+                handlePress={() => {
+                    setShowFamilyPopup(true);
+                }}
+                icon={item.icon}
+                name={item.name}
+            />
+        );
     };
 
     return (
@@ -244,6 +254,10 @@ export default function Home() {
                     </Pressable>
                 </View>
             </DownPopup>
+            <FamilyPopup
+                showFamilyPopup={showFamilyPopup}
+                setshowFamilyPopup={setShowFamilyPopup}
+            ></FamilyPopup>
         </ScrollView>
     );
 }
