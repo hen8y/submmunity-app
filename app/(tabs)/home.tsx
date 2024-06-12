@@ -32,23 +32,23 @@ export default function Home() {
     const families = [
         {
             name: "ZDUpnS",
-            icon: icons.iApple,
+            icon: icons.Apple,
         },
         {
             name: "s7IhYG",
-            icon: icons.iPrime,
+            icon: icons.Prime,
         },
         {
             name: "lsypcy",
-            icon: icons.iSpotify,
+            icon: icons.Spotify,
         },
         {
             name: "cGkd8O",
-            icon: icons.iNetflix,
+            icon: icons.Netflix,
         },
         {
             name: "cxdd5K",
-            icon: icons.iExpress,
+            icon: icons.Express,
         },
     ];
 

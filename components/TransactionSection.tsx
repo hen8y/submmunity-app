@@ -4,6 +4,7 @@ import ThemedText from "./ThemedText";
 import { generateHex } from "@/constants/utils";
 import { Iconify } from "react-native-iconify";
 import { router } from "expo-router";
+import { NumericFormat } from "react-number-format";
 
 export type TransactionSectionProps = {
     item: {
@@ -86,9 +87,17 @@ export default function TransactionSection({ item }: TransactionSectionProps) {
             </View>
 
             <View>
-                <ThemedText type="semibold" textClass="text-right">
-                    -₦{item.amount}
-                </ThemedText>
+                <NumericFormat
+                    value={item.amount}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    prefix={"₦"}
+                    renderText={(value) => (
+                        <ThemedText type="semibold" textClass="text-right">
+                            {value}
+                        </ThemedText>
+                    )}
+                />
                 <ThemedText textClass="text-zinc-700/80 text-right">
                     {item.time}
                 </ThemedText>

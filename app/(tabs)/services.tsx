@@ -9,49 +9,57 @@ export default function Services() {
     const subscriptions = [
         {
             id: "1",
-            icon: "path/to/apple-music-ng.png",
+            name: "Apple Music & Icloud",
+            icon: "Apple",
             price: "₦1500 / Month",
             families: 3,
         },
         {
             id: "2",
-            icon: "path/to/apple-music-us.png",
+            name: "Spotify",
+            icon: "Spotify",
             price: "₦4000 / Month",
             families: 0,
         },
         {
             id: "3",
-            icon: "path/to/apple-music-icloud.png",
+            name: "Express",
+            icon: "Express",
             price: "₦3000 / Month",
             families: 1,
         },
         {
             id: "4",
-            icon: "path/to/canva.png",
+            name: "Prime",
+            icon: "Prime",
             price: "₦1500 / Month",
             families: 0,
         },
         {
             id: "5",
-            icon: "path/to/crunchyroll.png",
+            name: "Netflix",
+            icon: "Netflix",
             price: "₦1520 / Month",
             families: 1,
         },
         {
             id: "6",
-            icon: "path/to/expressvpn.png",
+            name: "iCloud",
+            icon: "ICloud",
             price: "₦3500 / Month",
             families: 2,
         },
         {
             id: "7",
-            icon: "path/to/icloud-us.png",
+            name: "Canva",
+            icon: "Canva",
             price: "₦4000 / Month",
             families: 0,
         },
         {
             id: "8",
-            icon: "path/to/icloud-ng.png",
+            name: "Deezer",
+            icon: "Deezer",
             price: "₦1600 / Month",
             families: 1,
         },
@@ -85,6 +93,7 @@ export default function Services() {
                     renderItem={({ item }) => <SubscriptionList item={item} />}
                     keyExtractor={(item) => item.id}
                     contentContainerStyle={{ paddingBottom: 150, padding: 8 }}
+                    numColumns={2}
                 />
             </View>
         </SafeAreaView>

@@ -1,14 +1,16 @@
 import { Image, Pressable, Text, View } from "react-native";
 import React, { useState } from "react";
 import ThemedText from "../ThemedText";
-import icons from "@/constants/icons";
-import { Iconify } from "react-native-iconify";
+import { NumericFormat } from "react-number-format";
 import DownPopup from "../DownPopup";
 import { router } from "expo-router";
+import icons from "@/constants/icons";
+import { Iconify } from "react-native-iconify";
 
 export type SubscriptionListProps = {
     item: {
         id: string;
+        name: string;
         icon: string;
         price: string;
         families: number;
@@ -19,38 +21,43 @@ export default function SubscriptionList({ item }: SubscriptionListProps) {
     const [showPopup, setShowPopup] = useState(false);
     return (
         <Pressable
+            className="flex-1 m-2"
             onPress={() => {
                 router.push("/familylist");
             }}
         >
-            <View className="m-2 rounded-xl bg-white flex-1 p-4">
-                <ThemedText type="semibold">Apple Music</ThemedText>
-                <View className="mt-8 flex-row justify-between">
-                    <View>
-                        <ThemedText textClass="text-zinc-500 text-xs">
-                            3 Families Available
-                        </ThemedText>
-                        <ThemedText type="semibold" className="text-2xl mt-1">
-                            ₦24,000
-                        </ThemedText>
-                    </View>
-
-                    <View className="flex-row items-center">
-                        <View className="h-9 w-9 mx-1 rounded-full bg-white border border-zinc-200 p-3 flex-row items-center justify-center">
-                            <Image
-                                source={icons.iApple}
-                                resizeMode="contain"
-                                className="w-6 h-6 rounded-full"
+            <View className="bg-white border-zinc-200 flex-col justify-between border rounded-2xl p-4 h-40 flex-1">
+                <View>
+                    <View className="flex-row justify-between">
+                        <Image
+                            source={icons[item.icon]}
+                            resizeMode="contain"
+                            className="w-8 h-8 rounded-full"
+                        />
+                        <View className="rounded-md p-2 bg-zinc-100">
+                            <NumericFormat
+                                value={5000}
+                                displayType={"text"}
+                                thousandSeparator={true}
+                                prefix={"₦"}
+                                renderText={(value) => (
+                                    <ThemedText>{value}</ThemedText>
+                                )}
                             />
                         </View>
-                        <Pressable
-                            onPress={() => {
-                                setShowPopup(true);
-                            }}
-                            className="h-9 w-9 rounded-full bg-white border border-zinc-200 p-3 flex-row items-center justify-center"
-                        >
-                            <Iconify size={22} color="#555" icon="mage:email" />
-                        </Pressable>
+                    </View>
+                    <ThemedText type="semibold" textClass="text-zinc-600 mt-2">
+                        {item.name}
+                    </ThemedText>
+                </View>
+                <View>
+                    <View className="flex-row items-center mt-2">
+                        <Iconify
+                            size={15}
+                            color="#111"
+                            icon="arcticons:family-space"
+                        />
+                        <ThemedText textClass="mx-2">2 Families</ThemedText>
                     </View>
                 </View>
             </View>
@@ -59,6 +66,10 @@ export default function SubscriptionList({ item }: SubscriptionListProps) {
                 height={200}
                 setShowPopup={setShowPopup}
             />
+            {/* <View className="flex-row mt-2 justify-between items-center">
+                <ThemedText textClass="text-zinc-600">2 Families</ThemedText>
+                
+            </View> */}
         </Pressable>
     );
 }
