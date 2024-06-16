@@ -95,11 +95,7 @@ export default function JoinedFamilies() {
                     onPress={() => router.back()}
                     className="w-10 h-10 flex-row items-center justify-center rounded-full bg-zinc-100"
                 >
-                    <Iconify
-                        icon="ic:round-chevron-left"
-                        size={24}
-                        color="#111"
-                    />
+                    <Iconify icon="iconoir:cancel" size={24} color="#555" />
                 </TouchableOpacity>
             </View>
 

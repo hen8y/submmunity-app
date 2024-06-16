@@ -6,7 +6,7 @@ export default function FamilyLayout() {
         <Stack>
             <Stack.Screen
                 name="joinedfamilies"
-                options={{ headerShown: false }}
+                options={{ headerShown: false, animation: "slide_from_bottom" }}
             />
             <Stack.Screen
                 name="sharedfamilylist"

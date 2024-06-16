@@ -5,10 +5,6 @@ export default function ProfileLayout() {
     return (
         <Stack>
             <Stack.Screen name="familylist" options={{ headerShown: false }} />
-            <Stack.Screen
-                name="familydetails"
-                options={{ headerShown: false }}
-            />
         </Stack>
     );
 }

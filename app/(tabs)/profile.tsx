@@ -7,9 +7,9 @@ import { router } from "expo-router";
 
 export default function Profile() {
     return (
-        <ScrollView className="bg-zinc-50 h-full">
+        <SafeAreaView className="bg-zinc-50 h-full">
             <StatusBar style="auto" />
-            <SafeAreaView className="mt-20">
+            <ScrollView className="pt-1s0">
                 <View className="p-4">
                     <View>
                         <ThemedText type="semibold" textClass="text-2xl">
@@ -108,7 +108,7 @@ export default function Profile() {
                         </ThemedText>
                     </View>
                 </View>
-            </SafeAreaView>
-        </ScrollView>
+            </ScrollView>
+        </SafeAreaView>
     );
 }

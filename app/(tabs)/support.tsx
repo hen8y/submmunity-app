@@ -6,8 +6,8 @@ import ThemedText from "@/components/ThemedText";
 
 export default function Support() {
     return (
-        <ScrollView className="bg-zinc-50 h-full">
-            <SafeAreaView className="w-full mt-20">
+        <SafeAreaView className="bg-zinc-50 h-full">
+            <ScrollView className="w-full pt-10">
                 <StatusBar style="auto" />
                 <View className="p-4">
                     <View>
@@ -81,7 +81,7 @@ export default function Support() {
                         </View>
                     </View>
                 </View>
-            </SafeAreaView>
-        </ScrollView>
+            </ScrollView>
+        </SafeAreaView>
     );
 }

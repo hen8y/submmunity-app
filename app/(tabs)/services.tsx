@@ -14,6 +14,7 @@ import SubscriptionItem, {
 import { Iconify } from "react-native-iconify";
 import JoinedFamilyItem from "@/components/services/JoinedFamilyItem";
 import { router } from "expo-router";
+import HeadingText from "@/components/HeadingText";
 
 export default function Services() {
     const subscriptions = [
@@ -86,67 +87,67 @@ export default function Services() {
     }
 
     return (
-        <SafeAreaView className="h-full bg-zinc-50 w-full">
+        <SafeAreaView className="h-full bg-white w-full">
             <StatusBar style="dark" />
-            <ScrollView className="w-full pt-10">
-                <View className="p-4 pb-2">
-                    <View className="h-14 w-14 rounded-full bg-blue-400 items-center justify-center">
-                        <Iconify
-                            size={25}
-                            color="#fff"
-                            icon="fluent:people-28-filled"
-                        />
-                    </View>
-                    <Pressable
-                        onPress={() => {
-                            router.push("/joinedfamilies");
-                        }}
-                        className="flex-row justify-between items-center"
-                    >
-                        <View>
-                            <ThemedText
-                                textClass="mt-2 text-2xl text-zinc-700"
-                                type="semibold"
-                            >
-                                Joined Families
-                            </ThemedText>
-                            <ThemedText className="text-xs mt-1 text-zinc-500">
-                                Families you're a member
-                            </ThemedText>
+            <ScrollView className="w-full">
+                <View className="bg-white pb-10 pt-10">
+                    <View className="p-4 pb-2">
+                        <View className="h-14 w-14 rounded-full bg-blue-400 items-center justify-center">
+                            <Iconify
+                                size={25}
+                                color="#fff"
+                                icon="fluent:people-28-filled"
+                            />
                         </View>
-                        <Iconify
-                            size={25}
-                            color="#555"
-                            icon="ic:round-chevron-right"
-                        />
-                    </Pressable>
+                        <Pressable
+                            onPress={() => {
+                                router.push("/joinedfamilies");
+                            }}
+                            className="flex-row justify-between items-center"
+                        >
+                            <View>
+                                <ThemedText
+                                    textClass="mt-2 text-2xl text-zinc-700"
+                                    type="semibold"
+                                >
+                                    Joined Families
+                                </ThemedText>
+                                <ThemedText className="text-xs mt-1 text-zinc-500">
+                                    Families you're a member
+                                </ThemedText>
+                            </View>
+                            <Iconify
+                                size={25}
+                                color="#555"
+                                icon="ic:round-chevron-right"
+                            />
+                        </Pressable>
+                    </View>
+
+                    <FlatList
+                        data={subscriptions.slice(0, 3)}
+                        renderItem={({ item }) => (
+                            <JoinedFamilyItem
+                                columnClass=""
+                                subscription={item}
+                            />
+                        )}
+                        keyExtractor={(item) => item.id}
+                        contentContainerStyle={{
+                            padding: 12,
+                        }}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                    />
                 </View>
 
-                <FlatList
-                    data={subscriptions.slice(0, 3)}
-                    renderItem={({ item }) => (
-                        <JoinedFamilyItem columnClass="" subscription={item} />
-                    )}
-                    keyExtractor={(item) => item.id}
-                    contentContainerStyle={{
-                        padding: 12,
-                    }}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
+                <HeadingText
+                    title="Available Subscriptions"
+                    subtitle="Get a subscription cheaper"
                 />
-                <View className="p-4 mt-5">
-                    <View className="">
-                        <ThemedText
-                            type="semibold"
-                            textClass="text-2xl text-zinc-700"
-                        >
-                            Available Subscriptions
-                        </ThemedText>
-                        <ThemedText className="text-xs mt-1 text-zinc-500">
-                            Get a subscription cheaper
-                        </ThemedText>
-                    </View>
-                    <View className="mt-2">
+
+                <View className="p-4 pt-0 bg-white">
+                    <View className="mt-2 h-full">
                         {AvailableServices({ subscriptions })}
                     </View>
                 </View>

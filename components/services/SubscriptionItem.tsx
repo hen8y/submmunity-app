@@ -31,7 +31,7 @@ export default function SubscriptionItem({
                 <ThemedText textClass="text-zinc-500">
                     {subscription.name}
                 </ThemedText>
-                <View className="flex-row mt-5">
+                <View className="flex-row mt-3">
                     <View
                         className="p-2 rounded-xl border border-zinc-200"
                         style={{
@@ -57,14 +57,19 @@ export default function SubscriptionItem({
                                 2 Families
                             </ThemedText>
                         </View>
-                        <View className="rounded-xl p-2 y-1 bg-zinc-100">
+                        <View className="rounded-full p-2 y-1 bg-green-100">
                             <NumericFormat
                                 value={5000}
                                 displayType={"text"}
                                 thousandSeparator={true}
                                 prefix={"₦"}
                                 renderText={(value) => (
-                                    <ThemedText>{value}</ThemedText>
+                                    <ThemedText
+                                        type="semibold"
+                                        textClass="text-green-800"
+                                    >
+                                        {value}
+                                    </ThemedText>
                                 )}
                             />
                         </View>

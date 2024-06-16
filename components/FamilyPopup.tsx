@@ -1,4 +1,11 @@
-import { Modal, Pressable, StyleSheet, View } from "react-native";
+import {
+    Modal,
+    Pressable,
+    ScrollView,
+    StyleSheet,
+    TouchableOpacity,
+    View,
+} from "react-native";
 import React from "react";
 import { ViewProps } from "react-native-svg/lib/typescript/fabric/utils";
 import { Iconify } from "react-native-iconify";
@@ -21,6 +28,7 @@ export default function FamilyPopup({
                 visible={showFamilyPopup}
             >
                 <Pressable
+                    style={{ flex: 1 }}
                     className="w-full h-full bg-zinc-900/30"
                     onPress={() => {
                         setshowFamilyPopup(false);
@@ -45,7 +53,11 @@ export default function FamilyPopup({
                                 />
                             </Pressable>
                         </View>
-                        <View {...otherView} />
+                        <ScrollView style={{ flex: 1 }}>
+                            <TouchableOpacity activeOpacity={1}>
+                                <View {...otherView} />
+                            </TouchableOpacity>
+                        </ScrollView>
                     </View>
                 </Pressable>
             </Modal>

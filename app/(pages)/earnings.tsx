@@ -10,6 +10,7 @@ import { StatusBar } from "expo-status-bar";
 import ThemedText from "@/components/ThemedText";
 import { Iconify } from "react-native-iconify";
 import { router } from "expo-router";
+import HeadingText from "@/components/HeadingText";
 
 export default function Earnings() {
     return (
@@ -64,6 +65,28 @@ export default function Earnings() {
                             </Pressable>
                         </View>
                     </SafeAreaView>
+                </View>
+                <HeadingText
+                    title="Family payouts details"
+                    subtitle="Earnings from each of your family"
+                />
+                <View className="p-4">
+                    <View className="py-4 border-b border-zinc-200">
+                        <View className="flex-row items-center">
+                            <View className="w-16 h-16 rounded-full border"></View>
+                            <View>
+                                <ThemedText
+                                    type="semibold"
+                                    textClass="mx-2 text-base"
+                                >
+                                    Family Name
+                                </ThemedText>
+                                <ThemedText textClass="mx-2 text-zinc-500">
+                                    Family Name
+                                </ThemedText>
+                            </View>
+                        </View>
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
