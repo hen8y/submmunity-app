@@ -75,7 +75,7 @@ export default function Home() {
                             className="h-96 absolute opacity-70 w-96"
                         />
                         <View>
-                            <View className="flex-row mt-10 justify-between items-center">
+                            <View className="flex-row mt-10 justify-between items-center ">
                                 <View>
                                     <ThemedText textClass="text-white/90">
                                         Welcome back,
@@ -101,7 +101,7 @@ export default function Home() {
                                     />
                                 </Pressable>
                             </View>
-                            <ThemedText textClass="text-white/90 text-sm mt-7">
+                            <ThemedText textClass="text-white/90 text-sm m mt-7">
                                 Your Balance
                             </ThemedText>
 
@@ -152,7 +152,7 @@ export default function Home() {
                         </View>
                     </View>
 
-                    <View className="bg-zinc-50 h-full">
+                    <View className="bg-white h-full">
                         <View className="w-full mt-2 mx-auto">
                             <View className="flex-row justify-between p-4 pb-0">
                                 <View>

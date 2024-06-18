@@ -22,7 +22,7 @@ export default function PrimaryButton({
             activeOpacity={0.7}
             disabled={isLoading}
             onPress={handlePress}
-            className={`min-h-[60px] justify-center flex items-center rounded-full  ${customClasses}`}
+            className={`min-h-[60px] justify-center flex items-center rounded-full ${customClasses}`}
         >
             <ThemedText
                 type="semibold"

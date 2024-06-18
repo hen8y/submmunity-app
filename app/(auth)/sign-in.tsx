@@ -6,6 +6,7 @@ import {
     Platform,
     Image,
     TouchableOpacity,
+    Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
@@ -114,33 +115,28 @@ export default function SignIn() {
                                 <View className="h-[1px] flex-1 bg-zinc-300" />
                             </View>
                             <View className="gap-1 mt-5 flex-row w-full justify-between">
-                                <PrimaryButton
-                                    isLoading={false}
-                                    content={
-                                        <Image
-                                            source={images.apple}
-                                            className="h-6 w-6"
-                                            resizeMode="contain"
-                                        />
-                                    }
-                                    textClasses=""
-                                    handlePress={() => router.push("/sign-in")}
-                                    customClasses="flex-1 bg-white border mx-1 border-zinc-300"
-                                />
 
-                                <PrimaryButton
-                                    isLoading={false}
-                                    content={
-                                        <Image
-                                            source={images.google}
-                                            className="h-6 w-6"
-                                            resizeMode="contain"
-                                        />
-                                    }
-                                    textClasses=""
-                                    handlePress={() => router.push("/sign-in")}
-                                    customClasses="flex-1 bg-white border mx-1 border-zinc-300"
+                            <Pressable
+                                onPress={() => router.push("/sign-in")}
+                                className="flex-1 bg-white h-14 flex items-center justify-center rounded-full border mx-1 border-zinc-300"
+                            >
+                                <Image
+                                    source={images.apple}
+                                    className="h-6 w-6"
+                                    resizeMode="contain"
                                 />
+                            </Pressable>
+
+                            <Pressable
+                                onPress={() => router.push("/sign-in")}
+                                className="flex-1 bg-white flex h-14 items-center justify-center rounded-full border mx-1 border-zinc-300"
+                            >
+                                <Image
+                                    source={images.google}
+                                    className="h-6 w-6"
+                                    resizeMode="contain"
+                                />
+                            </Pressable>
                             </View>
                         </View>
                     </View>

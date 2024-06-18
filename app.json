@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/old-images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.hen8y.submmunity"
     },
     "web": {
       "bundler": "metro",
@@ -32,6 +33,20 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f966dd07-524d-4e58-9c5a-27468f547023"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/f966dd07-524d-4e58-9c5a-27468f547023"
     }
   }
 }

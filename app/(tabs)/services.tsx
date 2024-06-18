@@ -12,8 +12,6 @@ import ThemedText from "@/components/ThemedText";
 import SubscriptionItem, {
     SubscriptionItemProps,
 } from "@/components/services/SubscriptionItem";
-import { Iconify } from "react-native-iconify";
-import JoinedFamilyItem from "@/components/services/JoinedFamilyItem";
 import { router } from "expo-router";
 import HeadingText from "@/components/HeadingText";
 import { images } from "@/constants";
@@ -82,7 +80,10 @@ export default function Services() {
         subscriptions: SubscriptionItemProps["subscription"][];
     }) {
         return props.subscriptions.map((subscription, index) => (
-            <View key={subscription.id} className={`${index !== subscriptions.length - 1 ? 'border-b border-zinc-200' : ''}`}>
+            <View
+                key={subscription.id}
+                className={`${index !== subscriptions.length - 1 ? "border-b border-zinc-200" : ""}`}
+            >
                 <SubscriptionItem subscription={subscription} />
             </View>
         ));
@@ -94,36 +95,32 @@ export default function Services() {
             <ScrollView className="w-full">
                 <View className="pb-10 pt-10 p-4">
                     <View className="pb-2">
-                    <Pressable
+                        <View>
+                            <ThemedText
+                                textClass="mt-10 text-2xl text-zinc-700"
+                                type="semibold"
+                            >
+                                Joined Families
+                            </ThemedText>
+                            <ThemedText className="text-xs mt-1 text-zinc-500">
+                                Families you're a member
+                            </ThemedText>
+                        </View>
+                        <Pressable
+                            className="mt-5"
+                            style={styles.shadow}
                             onPress={() => {
                                 router.push("/joinedfamilies");
                             }}
-                            className="flex-row justify-between items-center"
                         >
-                            <View>
-                                <ThemedText
-                                    textClass="mt-10 text-2xl text-zinc-700"
-                                    type="semibold"
-                                >
-                                    Joined Families
-                                </ThemedText>
-                                <ThemedText className="text-xs mt-1 text-zinc-500">
-                                    Families you're a member
-                                </ThemedText>
+                            <View className="h-40 bg-white rounded-2xl overflow-hidden">
+                                <ImageBackground
+                                    resizeMode="cover"
+                                    className="flex-1 justify-center"
+                                    source={images.familiesBg}
+                                ></ImageBackground>
                             </View>
-                            <Iconify
-                                size={25}
-                                color="#555"
-                                icon="ic:round-chevron-right"
-                            />
                         </Pressable>
-                        <View className="mt-5">
-                            <View className="h-40 bg-white rounded-2xl overflow-hidden" style={styles.shadow}>
-                                <ImageBackground resizeMode="cover" className="flex-1 justify-center" source={images.familiesBg}>
-
-                                </ImageBackground>
-                            </View>
-                        </View>
                     </View>
                 </View>
 
@@ -132,9 +129,11 @@ export default function Services() {
                     title="Available Subscriptions"
                     subtitle="Get a subscription cheaper"
                 />
-
                 <View className="p-4 pt-0 pb-10">
-                    <View className="mt-2 bg-white rounded-2xl" style={styles.shadow}>
+                    <View
+                        className="mt-2 bg-white rounded-2xl"
+                        style={styles.shadow}
+                    >
                         {AvailableServices({ subscriptions })}
                     </View>
                 </View>
@@ -142,7 +141,7 @@ export default function Services() {
         </SafeAreaView>
     );
 }
-    const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     shadow: {
         shadowColor: "#ccc",
         shadowOffset: { width: 0, height: 2 },
