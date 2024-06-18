@@ -5,7 +5,6 @@ import { NumericFormat } from "react-number-format";
 import { router } from "expo-router";
 import icons from "@/constants/icons";
 import { Iconify } from "react-native-iconify";
-import { generateHex } from "@/constants/utils";
 
 export type SubscriptionItemProps = {
     subscription: {
@@ -27,19 +26,13 @@ export default function SubscriptionItem({
                 router.push("/familylist");
             }}
         >
-            <View className="flex-1 bg-white mt-2 p-5 rounded-2xl border border-zinc-200">
+            <View className="flex-1 mt-2 p-5">
                 <ThemedText textClass="text-zinc-500">
                     {subscription.name}
                 </ThemedText>
                 <View className="flex-row mt-3">
                     <View
-                        className="p-2 rounded-xl border border-zinc-200"
-                        style={{
-                            backgroundColor: `#${generateHex(
-                                subscription.name
-                            )}20`,
-                        }}
-                    >
+                        className="p-2 rounded-xl border border-zinc-200">
                         <Image
                             source={icons[subscription.icon]}
                             resizeMode="contain"

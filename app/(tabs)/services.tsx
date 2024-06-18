@@ -1,9 +1,10 @@
 import {
     SafeAreaView,
-    FlatList,
+    StyleSheet,
     View,
     ScrollView,
     Pressable,
+    ImageBackground,
 } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
@@ -15,6 +16,7 @@ import { Iconify } from "react-native-iconify";
 import JoinedFamilyItem from "@/components/services/JoinedFamilyItem";
 import { router } from "expo-router";
 import HeadingText from "@/components/HeadingText";
+import { images } from "@/constants";
 
 export default function Services() {
     const subscriptions = [
@@ -79,27 +81,20 @@ export default function Services() {
     function AvailableServices(props: {
         subscriptions: SubscriptionItemProps["subscription"][];
     }) {
-        return props.subscriptions.map((subscription) => (
-            <View key={subscription.id}>
+        return props.subscriptions.map((subscription, index) => (
+            <View key={subscription.id} className={`${index !== subscriptions.length - 1 ? 'border-b border-zinc-200' : ''}`}>
                 <SubscriptionItem subscription={subscription} />
             </View>
         ));
     }
 
     return (
-        <SafeAreaView className="h-full bg-white w-full">
+        <SafeAreaView className="h-full bg-zinc-50 w-full">
             <StatusBar style="dark" />
             <ScrollView className="w-full">
-                <View className="bg-white pb-10 pt-10">
-                    <View className="p-4 pb-2">
-                        <View className="h-14 w-14 rounded-full bg-blue-400 items-center justify-center">
-                            <Iconify
-                                size={25}
-                                color="#fff"
-                                icon="fluent:people-28-filled"
-                            />
-                        </View>
-                        <Pressable
+                <View className="pb-10 pt-10 p-4">
+                    <View className="pb-2">
+                    <Pressable
                             onPress={() => {
                                 router.push("/joinedfamilies");
                             }}
@@ -107,7 +102,7 @@ export default function Services() {
                         >
                             <View>
                                 <ThemedText
-                                    textClass="mt-2 text-2xl text-zinc-700"
+                                    textClass="mt-10 text-2xl text-zinc-700"
                                     type="semibold"
                                 >
                                     Joined Families
@@ -122,32 +117,24 @@ export default function Services() {
                                 icon="ic:round-chevron-right"
                             />
                         </Pressable>
-                    </View>
+                        <View className="mt-5">
+                            <View className="h-40 bg-white rounded-2xl overflow-hidden" style={styles.shadow}>
+                                <ImageBackground resizeMode="cover" className="flex-1 justify-center" source={images.familiesBg}>
 
-                    <FlatList
-                        data={subscriptions.slice(0, 3)}
-                        renderItem={({ item }) => (
-                            <JoinedFamilyItem
-                                columnClass=""
-                                subscription={item}
-                            />
-                        )}
-                        keyExtractor={(item) => item.id}
-                        contentContainerStyle={{
-                            padding: 12,
-                        }}
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                    />
+                                </ImageBackground>
+                            </View>
+                        </View>
+                    </View>
                 </View>
 
                 <HeadingText
+                    bordered={false}
                     title="Available Subscriptions"
                     subtitle="Get a subscription cheaper"
                 />
 
-                <View className="p-4 pt-0 bg-white">
-                    <View className="mt-2 h-full">
+                <View className="p-4 pt-0 pb-10">
+                    <View className="mt-2 bg-white rounded-2xl" style={styles.shadow}>
                         {AvailableServices({ subscriptions })}
                     </View>
                 </View>
@@ -155,3 +142,13 @@ export default function Services() {
         </SafeAreaView>
     );
 }
+    const styles = StyleSheet.create({
+    shadow: {
+        shadowColor: "#ccc",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 5,
+        zIndex: 2,
+    },
+});

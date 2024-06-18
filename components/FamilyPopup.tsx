@@ -35,7 +35,7 @@ export default function FamilyPopup({
                     }}
                 >
                     <View
-                        className="absolute rounded-xl bottom-0 w-full h-[90vh] bg-zinc-50 p-4"
+                        className="absolute rounded-3xl bottom-0 w-full h-[90vh] bg-zinc-50 p-4"
                         style={[styles.modalView]}
                         onStartShouldSetResponder={() => true}
                     >

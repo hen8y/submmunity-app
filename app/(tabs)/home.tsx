@@ -191,7 +191,7 @@ export default function Home() {
 
                 <DownPopup
                     showPopup={showPopup}
-                    height={200}
+                    height={150}
                     setShowPopup={setShowPopup}
                 >
                     <View className="p-4">
@@ -214,27 +214,6 @@ export default function Home() {
                                 Add New Family
                             </ThemedText>
                         </Pressable>
-
-                        <Pressable
-                            onPress={() => {
-                                router.push("/joinedfamilies");
-                                setShowPopup(false);
-                            }}
-                            className="flex-row items-center mt-7"
-                        >
-                            <Iconify
-                                icon="system-uicons:users"
-                                color="#3f3f46"
-                                size={20}
-                            />
-                            <ThemedText
-                                className="mx-6 flex-1"
-                                textClass="text-zinc-700 text-sm"
-                            >
-                                View Shared You've Joined
-                            </ThemedText>
-                        </Pressable>
-
                         <Pressable
                             onPress={() => {
                                 router.push("/sharedfamilylist");
@@ -251,7 +230,7 @@ export default function Home() {
                                 className="mx-6 flex-1"
                                 textClass="text-zinc-700 text-sm"
                             >
-                                View Families You've Shared
+                                View Shared Families
                             </ThemedText>
                         </Pressable>
                     </View>
