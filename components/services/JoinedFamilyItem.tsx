@@ -5,7 +5,6 @@ import ThemedText from "../ThemedText";
 import icons from "@/constants/icons";
 import DownPopup from "../DownPopup";
 import { Iconify } from "react-native-iconify";
-import { FlatList } from "react-native-gesture-handler";
 
 type JoinedFamiliesProps = SubscriptionItemProps & { columnClass: string };
 

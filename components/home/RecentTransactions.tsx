@@ -1,4 +1,4 @@
-import { FlatList, Pressable, Text, View } from "react-native";
+import { Pressable, View } from "react-native";
 import React from "react";
 import ThemedText from "../ThemedText";
 import TransactionSection from "../TransactionSection";

@@ -1,16 +1,9 @@
-import {
-    FlatList,
-    SafeAreaView,
-    ScrollView,
-    TouchableOpacity,
-    View,
-} from "react-native";
+import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import ThemedText from "@/components/ThemedText";
 import { Iconify } from "react-native-iconify";
 import { router } from "expo-router";
-import RecentTransactions from "@/components/home/RecentTransactions";
 import TransactionSection, {
     TransactionSectionProps,
 } from "@/components/TransactionSection";

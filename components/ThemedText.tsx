@@ -2,7 +2,7 @@ import { Text, type TextProps } from "react-native";
 import React from "react";
 
 export type ThemedTextProps = TextProps & {
-    type?: "bold" | "semibold" | "default" | "em";
+    type?: "bold" | "semibold" | "default" | "em" | "italic";
     textClass?: string;
 };
 
@@ -20,6 +20,8 @@ export default function ThemedText({
             ? "font-bPoppin"
             : type == "semibold"
             ? "font-sbPoppin"
+            : type == "italic"
+            ? "font-iPoppin"
             : "font-ebPoppin";
 
     return <Text className={`${textClass} ${font}`} {...textProps} />;

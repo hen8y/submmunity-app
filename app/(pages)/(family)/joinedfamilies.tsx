@@ -1,11 +1,4 @@
-import {
-    FlatList,
-    Pressable,
-    SafeAreaView,
-    ScrollView,
-    TouchableOpacity,
-    View,
-} from "react-native";
+import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import ThemedText from "@/components/ThemedText";

@@ -6,6 +6,7 @@ import {
     View,
     Image,
     Pressable,
+    TouchableWithoutFeedback,
 } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
@@ -24,9 +25,16 @@ interface Family {
     name: string;
     icon: ImageSourcePropType; // Adjust the type if necessary
 }
+interface MemberItem {
+    id: number;
+    name: string;
+    status: string;
+    renewalDate: string;
+}
 export default function Home() {
     const [showPopup, setShowPopup] = useState(false);
     const [showFamilyPopup, setShowFamilyPopup] = useState(false);
+    const [familyInfoOption, setfamilyInfoOption] = useState("details");
 
     const families = [
         {
@@ -50,6 +58,56 @@ export default function Home() {
             icon: icons.Express,
         },
     ];
+    const members = [
+        {
+            id: 1,
+            name: "Henry Oaul",
+            status: "Active",
+            renewalDate: "01 Apr 24",
+        },
+        {
+            id: 2,
+            name: "Jon Doe",
+            status: "Unpaid",
+            renewalDate: "01 Apr 24",
+        },
+        {
+            id: 3,
+            name: "Will Jane",
+            status: "Overdue",
+            renewalDate: "01 Apr 24",
+        },
+        {
+            id: 4,
+            name: "Keith Keep",
+            status: "Active",
+            renewalDate: "01 Apr 24",
+        },
+        {
+            id: 5,
+            name: "Ogbonna Henry",
+            status: "Unpaid",
+            renewalDate: "01 Apr 24",
+        },
+        {
+            id: 6,
+            name: "Will Jane",
+            status: "Overdue",
+            renewalDate: "01 Apr 24",
+        },
+        {
+            id: 7,
+            name: "Keith Keep",
+            status: "Active",
+            renewalDate: "01 Apr 24",
+        },
+        {
+            id: 8,
+            name: "Ogbonna Henry",
+            status: "Unpaid",
+            renewalDate: "01 Apr 24",
+        },
+    ];
 
     const renderItem = ({ item }: { item: Family }) => {
         return (
@@ -62,7 +120,47 @@ export default function Home() {
             />
         );
     };
-
+    const memberItem = ({ item }: { item: MemberItem }) => {
+        return (
+            <TouchableWithoutFeedback onPress={() => {}}>
+                <View className="flex-row items-center mt-5 justify-between">
+                    <View className="flex-row items-center">
+                        <View className="h-12 w-12 border flex items-center justify-center border-neutral-300 rounded-full">
+                            <ThemedText className="uppercase">
+                                {item.name.substring(0, 2)}
+                            </ThemedText>
+                        </View>
+                        <View className="mx-2">
+                            <ThemedText type="semibold">{item.name}</ThemedText>
+                            <View className="flex-row items-center mt-1">
+                                <ThemedText className="text-xs text-neutral-600">
+                                    Renewal Date
+                                </ThemedText>
+                                <ThemedText className="text-xs mx-1 text-neutral-500">
+                                    {item.renewalDate}
+                                </ThemedText>
+                            </View>
+                        </View>
+                    </View>
+                    <View>
+                        <ThemedText
+                            type="italic"
+                            className={`underline text-xs ${
+                                item.status === "Active"
+                                    ? "text-primary"
+                                    : item.status === "Overdue"
+                                    ? "text-red-500"
+                                    : "text-blue-400"
+                            }`}
+                        >
+                            {item.status}
+                        </ThemedText>
+                    </View>
+                </View>
+            </TouchableWithoutFeedback>
+        );
+    };
+    const status = "Active";
     return (
         <SafeAreaView className="h-full bg-primary">
             <ScrollView className="h-full flex-1 ">
@@ -238,7 +336,80 @@ export default function Home() {
                 <FamilyPopup
                     showFamilyPopup={showFamilyPopup}
                     setshowFamilyPopup={setShowFamilyPopup}
-                ></FamilyPopup>
+                >
+                    <View className="h-full">
+                        <View
+                            className={`h-full ${
+                                familyInfoOption === "members"
+                                    ? "block"
+                                    : "hidden"
+                            }`}
+                        >
+                            <View className="flex-row items-center">
+                                <ThemedText type="semibold" className="text-xl">
+                                    Members
+                                </ThemedText>
+                                <ThemedText className="text-zinc-500 mx-2">
+                                    7 active
+                                </ThemedText>
+                            </View>
+                            <View className="mt-2 flex-1 h-full">
+                                <FlatList
+                                    data={members}
+                                    renderItem={memberItem}
+                                    keyExtractor={(item) => item.id.toString()}
+                                    contentContainerStyle={{
+                                        paddingBottom: 90,
+                                    }}
+                                />
+                            </View>
+                        </View>
+
+                        <View
+                            className={`h-full ${
+                                familyInfoOption === "details"
+                                    ? "block"
+                                    : "hidden"
+                            }`}
+                        >
+                            <View className="flex-row justify-between items-center">
+                                <ThemedText type="semibold" className="text-xl">
+                                    Family Details
+                                </ThemedText>
+                                <Pressable className="bg-black p-3 px-4 rounded-full">
+                                    <ThemedText className="text-white text-xs">
+                                        Request Delete
+                                    </ThemedText>
+                                </Pressable>
+                            </View>
+                            <View className="rounded-3xl min-h-[30vh] bg-zinc-100 mt-5 border border-zinc-200"></View>
+                        </View>
+                        <View className="flex items-center justify-center w-full absolute bottom-0 ">
+                            <View className="h-14 border p-1 border-zinc-600 mb-7 bg-white rounded-full w-10/12 flex-row">
+                                <Pressable
+                                    onPress={() =>
+                                        setfamilyInfoOption("details")
+                                    }
+                                    className={`h-full flex-1 ${
+                                        familyInfoOption === "details"
+                                            ? "bg-primary border border-zinc-600"
+                                            : "bg-white"
+                                    } rounded-full`}
+                                ></Pressable>
+                                <Pressable
+                                    onPress={() =>
+                                        setfamilyInfoOption("members")
+                                    }
+                                    className={`h-full flex-1 ${
+                                        familyInfoOption === "members"
+                                            ? "bg-primary border border-zinc-600"
+                                            : "bg-white"
+                                    } rounded-full`}
+                                ></Pressable>
+                            </View>
+                        </View>
+                    </View>
+                </FamilyPopup>
             </ScrollView>
         </SafeAreaView>
     );

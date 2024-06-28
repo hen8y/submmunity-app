@@ -35,13 +35,13 @@ export default function FamilyPopup({
                     }}
                 >
                     <View
-                        className="absolute rounded-3xl bottom-0 w-full h-[90vh] bg-zinc-50 p-4"
+                        className="absolute rounded-3xl bottom-0 w-full h-[60vh] bg-zinc-50 p-4"
                         style={[styles.modalView]}
                         onStartShouldSetResponder={() => true}
                     >
-                        <View className="flex-row justify-center">
+                        <View className="flex-row justify-center mb-1">
                             <View className="h-1 mx-auto my-2 rounded-full w-8 bg-zinc-400"></View>
-                            <Pressable
+                            {/* <Pressable
                                 onPress={() => {
                                     setshowFamilyPopup(false);
                                 }}
@@ -51,13 +51,13 @@ export default function FamilyPopup({
                                     size={30}
                                     color="#555"
                                 />
-                            </Pressable>
+                            </Pressable> */}
                         </View>
-                        <ScrollView style={{ flex: 1 }}>
+                        <View style={{ flex: 1 }} className="h-full">
                             <TouchableOpacity activeOpacity={1}>
                                 <View {...otherView} />
                             </TouchableOpacity>
-                        </ScrollView>
+                        </View>
                     </View>
                 </Pressable>
             </Modal>

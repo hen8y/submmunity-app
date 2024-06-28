@@ -14,6 +14,7 @@ module.exports = {
                 bPoppin: 'bPoppin',
                 sbPoppin: 'sbPoppin',
                 ebPoppin: 'ebPoppin',
+                iPoppin: 'iPoppin'
             }
         },
     },

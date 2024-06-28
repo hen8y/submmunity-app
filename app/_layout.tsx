@@ -12,6 +12,7 @@ export default function RootLayout() {
         sbPoppin: require("@/assets/fonts/Poppins-Medium.ttf"),
         bPoppin: require("@/assets/fonts/Poppins-Bold.ttf"),
         ebPoppin: require("@/assets/fonts/Poppins-ExtraBold.ttf"),
+        ibPoppin: require("@/assets/fonts/Poppins-Italic.ttf"),
     });
 
     useEffect(() => {
