@@ -4,7 +4,7 @@ Supposed to be a mobile app for [submmunity](https://submmunity.com), fortunatel
 
 # License
 
-This project is licensed under [CC BY-NV-4.0](https://github.com/hen8y/submmunity-app/LICENSE.md), allowing you to fork, modify, and share it, but not use it for commercial purposes. [Learn more](https://creativecommons.org/licenses/by-nc/4.0/)
+This project is licensed under [CC BY-NV-4.0](https://github.com/hen8y/submmunity-app/blob/main/LICENSE.md), allowing you to fork, modify, and share it, but not use it for commercial purposes. [Learn more](https://creativecommons.org/licenses/by-nc/4.0/)
 
 # Contribution
 
