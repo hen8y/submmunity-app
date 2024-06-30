@@ -1,6 +1,6 @@
 # Submmunity App
 
-Supposed to be a mobile app for [submmunity](https://submmunity.com), fortunately unfortunate I've decided to keep the subcommunity on the web.
+Supposed to be a mobile app for [submmunity](https://submmunity.com), fortunately unfortunate I've decided to keep the subcommunity as a PWA (Progressive-Web-App).
 
 # License
 
