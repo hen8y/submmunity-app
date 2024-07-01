@@ -8,7 +8,7 @@ This project is licensed under [CC BY-NV-4.0](https://github.com/hen8y/submmunit
 
 # Contribution
 
-No comtributions allowed currently
+No contributions allowed currently
 
 Don't forget to [follow me on twitter](https://twitter.com/hen8y)!
 
